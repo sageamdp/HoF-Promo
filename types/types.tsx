@@ -24,6 +24,22 @@ export type SaleCardProps = {
     titleColor?: string;
 };
 
+export type SaleAltCardProps = {
+    name: string;
+    strainType: string;
+    potency: string;
+    prices: {
+        priceOZ?: number;
+        price1g?: number;
+    };
+    saleText?: string;
+    imageUrl?: string;
+    short?: boolean;
+    titleColor?: string;
+};
+
+
+
 export type SectionHeaderProps = {
     name: string;
 };

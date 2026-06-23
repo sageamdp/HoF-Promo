@@ -3,29 +3,45 @@ import SectionHeader from "components/SectionHeader";
 import PriceCategory from "components/PriceCategory";
 import SaleCard from "components/SaleCard";
 import Footer from "components/Footer";
-import type { Strain, SaleCardProps } from "types/types";
-import HouseOfFireLogo from "../../assets/HOF_logo.png"; 
+import type { Strain, SaleCardProps, SaleAltCardProps } from "types/types";
+import HouseOfFireLogo from "../../assets/HOF_logo-removebg-preview.png";
+import HouseOfFireLogoDark from "../../assets/HOF_logo-removebg-preview-dark.png";
+import BOUTIQLogo from "../../assets/BOUTIQ_LogoWhite.png"; 
+import Caminologo from "../../assets/camino_logo.webp"; 
+import Stiizylogo from "../../assets/stiizy_logo.png"; 
+import SaleAltCard from "components/SaleAltCard";
 
 const edibles = [
-    { name: "Gummies", dosage: "Assorted Flavors", price: "$35", imageUrl: HouseOfFireLogo } as SaleCardProps,
-    { name: "Edible B", dosage: "Assorted Flavors", price: "$12", imageUrl: HouseOfFireLogo } as SaleCardProps,
-    { name: "Edible C", dosage: "Assorted Flavors", price: "$15",  } as SaleCardProps,
-    { name: "Edible D", dosage: "Assorted Flavors", price: "$20",  } as SaleCardProps
+    { name: "CAMINO GUMMIES", dosage: "Assorted Flavors", price: "$35", imageUrl: Caminologo } as SaleCardProps,
+    { name: "CAMINO SOURS", dosage: "Assorted Flavors", price: "$35", imageUrl: Caminologo } as SaleCardProps,
+    { name: "STIIZY GUMMIES", dosage: "Assorted Flavors", price: "$25",  imageUrl: Stiizylogo } as SaleCardProps,
+    { name: "FADED FRUITS", dosage: "Assorted Flavors", price: "$30",  imageUrl: HouseOfFireLogo } as SaleCardProps
+]
+
+const concentrates = [
+    {
+        name: "LEMON CHERRY DIAMONDS", strainType: "HYB", potency: "82.96%", imageUrl: HouseOfFireLogo, prices: { priceOZ: 105, price1g: 10 }
+    } as SaleAltCardProps,
+    { name: "WHITE TRUFFLE BADDER", strainType: "IND", potency: "68.69%", prices: { priceOZ: 105, price1g: 10, } } as SaleAltCardProps,
 ]
 
 const drinks = [
-    { name: "Drink A", dosage: "Assorted Flavors", price: "$5" } as SaleCardProps,
-    { name: "Drink B", dosage: "Assorted Flavors", price: "$6"} as SaleCardProps,
-    { name: "Drink C", dosage: "Assorted Flavors", price: "$7" } as SaleCardProps,
+    {
+        name: "LOUPER", dosage: "Cola • Diet Cola • Orange • Grape • Pineapple \n 50mg each", price: "$$10"
+    } as SaleCardProps,
+    { name: "ORACLE", dosage: "Raspherry Spritz • 50mg", price: "$10" } as SaleCardProps,
+    { name: "CHRONIC HARVEST", dosage: "Tea / Lemonade • 150mg", price: "$20" } as SaleCardProps,
 ]
 
 const preRolls = [
-    { name: "Pre-Roll A", dosage: "Assorted Flavors", price: "$10" } as SaleCardProps,
-    { name: "Pre-Roll B", dosage: "Assorted Flavors", price: "$12" } as SaleCardProps,
-    { name: "Pre-Roll C", dosage: "Assorted Flavors", price: "$15" } as SaleCardProps,
-    { name: "Pre-Roll D", price: "$18", saleText: "5 for $20" } as SaleCardProps,
-    { name: "Pre-Roll E", dosage: "Assorted Flavors", price: "$20" } as SaleCardProps
-] 
+    { name: "STIIZY 40'S", dosage: "5g x 5 Pack - Infused", price: "$32", imageUrl: Stiizylogo } as SaleCardProps,
+    { name: "STIIZY 40'S", dosage: "1g Pre-Roll - Infused", price: "$17", imageUrl: Stiizylogo } as SaleCardProps,
+    { name: "BOUTIQ SNACK PACK", dosage: "Infused Pre-Roll Pack", price: "$35", imageUrl: BOUTIQLogo } as SaleCardProps,
+    { name: "HOUSE PRE ROLL", price: "$5", saleText: "5 for $20", imageUrl: HouseOfFireLogo } as SaleCardProps,
+    { name: "BABY JEETER", dosage: ".5g x 5 Раск", price: "$45" } as SaleCardProps
+]
+
+
 
 export default function ScreenOne() {
     return (
@@ -36,9 +52,20 @@ export default function ScreenOne() {
             <Box mt={'md'} style={{ zIndex: 10, height: 6, background: `linear-gradient(90deg, rgba(255, 129, 110, 0), #ff6f46, rgba(255, 129, 110, 0))`, boxShadow: `10px 5px 10px #000000`  }}></Box>
             <Box className="curved-shadow-box"></Box>
             {SectionHeader({ name: "Edibles & Concentrates" })}
-                <Flex mt={'md'} w='100%' gap='md' px='md' direction='row' >
+                <Flex mt={'md'} w='100%' gap='md' px='md' direction='row' align='flex-start' >
                     {edibles.map(({ name, dosage, price, saleText, imageUrl }) => (
                         <SaleCard key={name} name={name} dosage={dosage} price={price} saleText={saleText} imageUrl={imageUrl} />
+                    ))}
+                    {concentrates.map(({ name, strainType, potency, prices, imageUrl }) => (
+                        <SaleAltCard
+                            key={name}
+                            name={name}
+                            strainType={strainType}
+                            potency={potency}
+                            prices={prices}
+                            imageUrl={imageUrl}   
+                            titleColor='white'
+                        />
                     ))}
             </Flex> 
             {SectionHeader({ name: "Drinks" })}

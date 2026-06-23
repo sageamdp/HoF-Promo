@@ -6,28 +6,37 @@ import Footer from "components/Footer";
 import type { Strain, SaleCardProps } from "types/types";
 
 
-const strains1 = [
-    { name: "Strain A", type: "IND", potency: '29.19%' } as Strain,
-    { name: "Strain B", type: "SAT", potency: '25.00%' } as Strain,
-    { name: "Strain C", type: "HYB", potency: '27.50%' } as Strain,
+const strainsPremium = [
+    { name: "Krunch Berries", type: "HYB", potency: '29.19%' } as Strain,
+    { name: "Lemon Dropz", type: "SAT", potency: '28.19%' } as Strain,
+    { name: "Candy Gas", type: "HYB", potency: '27.73%' } as Strain,
+    { name: "Nerd Runtz", type: "HYB", potency: '27.67%' } as Strain,
 ];
-const strains2 = [
-    { name: "Strain A1", type: "IND", potency: '29.19%' } as Strain,
-    { name: "Strain B1", type: "SAT", potency: '25.00%' } as Strain,
+const strainsReserve = [
+    { name: "Black Garlic Gelato x GMO", type: "IND", potency: '27.50%' } as Strain,
+    { name: "G-41", type: "HYB", potency: '24.94%' } as Strain,
+    { name: "Lilac Diesel", type: "HYB", potency: '24.04%' } as Strain,
 ];
+const strainsValue = [
+    { name: "Runtz", type: "IND", potency: '29.19%' } as Strain,
+    { name: "BTY OG", type: "HYB", potency: '25.00%' } as Strain,
+    { name: "BTG Diesel", type: "SAT", potency: '25.00%' } as Strain,
+]; 
 
 const priceCategories = [
-    { name: "Premium", color: 'brandPizzazz', priceOZ: 115, priceHALF: 79, priceWTR: 48, price8TH: 38, strains: strains1 },
-    { name: "Reserve", color: 'brandPersimmon', priceOZ: 105, priceHALF: 72, priceWTR: 38, price8TH: 28, strains: strains2 },
-    { name: "Value", color: 'brandStarship', priceOZ: 92, priceHALF: 55, priceWTR: 30, price8TH: 23, strains: strains1 },
+    { name: "Premium", color: 'brandPizzazz', priceOZ: 115, priceHALF: 79, priceWTR: 48, price8TH: 38, strains: strainsPremium },
+    { name: "Reserve", color: 'brandPersimmon', priceOZ: 105, priceHALF: 72, priceWTR: 38, price8TH: 28, strains: strainsReserve },
+    { name: "Value", color: 'brandStarship', priceOZ: 92, priceHALF: 55, priceWTR: 30, price8TH: 23, strains: strainsValue },
 ];
 const vapes = [
-    { name: "Vape A", dosage: "2g Disposable", price: "$35", saleText: "2 For $55" } as SaleCardProps,
-    { name: "Vape B", dosage: "2g Disposable", price: "$40", saleText: "2 For $60" } as SaleCardProps,
-    { name: "Vape C", dosage: "2g Disposable", price: "$30", saleText: "2 For $50" } as SaleCardProps,
-    { name: "Vape C1", dosage: "2g Disposable", price: "$30", saleText: "2 For $50" } as SaleCardProps,
-    { name: "Vape C2", dosage: "2g Disposable", price: "$30", saleText: "2 For $50" } as SaleCardProps,
-    { name: "Vape C3", dosage: "2g Disposable", price: "$30", saleText: "2 For $50" } as SaleCardProps,
+    { name: "MUHA MEDS", dosage: "2g Disposable", price: "$35", saleText: "2 For $55" } as SaleCardProps,
+    { name: "MADLABS", dosage: "2g Disposable", price: "$40", saleText: "2 For $55" } as SaleCardProps,
+    { name: "GHOST", dosage: "2g Disposable", price: "$30", saleText: "2 For $50" } as SaleCardProps,
+    { name: "STIIZY", dosage: "Live Resin AlO 1g", price: "$35"} as SaleCardProps,
+    { name: "ROVE", dosage: "Live Resin 1g Cart", price: "$60"} as SaleCardProps,
+    { name: "ROVE", dosage: "1g Disposable", price: "$55" } as SaleCardProps,
+    { name: "QB LABS", dosage: "2g Disposable", price: "$33" } as SaleCardProps,
+    { name: "CB", dosage: "1g Disposable", price: "$40" } as SaleCardProps,
 ]
 
 

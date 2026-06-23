@@ -1,5 +1,5 @@
 
-
+import parse from 'html-react-parser';
 import { Flex, Group, Image, Text, Stack } from "@mantine/core";
 import logoDark from "../assets/HOF_logo.png"
 import StrainTag from "./StrainTag";
@@ -60,9 +60,8 @@ export default function Header() {
                 fontSize: '3rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
-            }}
-                dangerouslySetInnerHTML={{ __html: pageTitle.replace(/\b\w/g, "<span class='--mantine-color-brandPersimmon'>$&</span>") }}>
-                
+            }}>
+                {parse(pageTitle.replace(/\b\w/g, "<span class='--mantine-color-brandPersimmon'>$&</span>"))}
             </Text>
         </Group>
         <Stack>

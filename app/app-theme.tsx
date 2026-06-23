@@ -65,7 +65,7 @@ export const appTheme = createTheme({
           width: '100%',
           borderTop: `transparent`,
           height: 2,
-          background: `linear-gradient(90deg, #ff816e, #ff6f46, #ff816e)`,
+          background: `linear-gradient(90deg, rgba(255, 111, 70, 1) 0%, rgba(241, 60, 39, 1) 50%, rgba(255, 111, 70, 1) 77%, rgba(255, 111, 70, 0) 100%)`,
         }
       }
     }),
@@ -75,7 +75,7 @@ export const appTheme = createTheme({
 export function AppTheme({ children, theme = appTheme, ...props }: MantineProviderProps) {
   return <MantineProvider theme={theme} {...props} cssVariablesResolver={resolver}>
     <div style={{ width: '100%', height: '100%', position: 'relative' }} >
-      <video autoPlay muted loop style={{ position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}>
+      <video autoPlay muted loop style={{ position: 'fixed', width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}>
         <source src={bgVideo} type="video/mp4" />
       </video>
       <Header /> 

@@ -49,7 +49,7 @@ export default function PriceCategory({ name, color, priceOZ, priceHALF, priceWT
                 }}>
                     <Group>
                         <Text>{name}</Text>
-                        <StrainTypeTag type={type} color={type === "IND" ? 'brandBlueMarguerite' : type === "SAT" ? 'brandSilverTree' : 'brandCerulean'} />
+                        <StrainTypeTag type={type}  />
                     </Group>
                     <Text>{potency}</Text>
                 </Flex>

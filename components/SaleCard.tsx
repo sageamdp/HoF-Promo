@@ -1,6 +1,8 @@
-import { Card, Stack, Title, Text, Image } from "@mantine/core";
+import { Card, Stack, Title, Text, Image, Box } from "@mantine/core";
 import { motion } from "framer-motion";
 import type { SaleCardProps } from "types/types";
+import parse from 'html-react-parser';
+
 export default function SaleCard({ name, dosage, price, saleText, imageUrl, short = false, titleColor = 'brandPersimmon' }: SaleCardProps) {
 
 
@@ -14,7 +16,6 @@ export default function SaleCard({ name, dosage, price, saleText, imageUrl, shor
           left: '50%',
           transform: 'translate(-50%, -50%)',
           zIndex: 1,
-          opacity: 0.2,
           width: '100%',
         }}
         transition={{
@@ -24,20 +25,31 @@ export default function SaleCard({ name, dosage, price, saleText, imageUrl, shor
         }}
       >
         {imageUrl && (
-          <Image
-            src={imageUrl}
-            alt="House of Fire"
-            width={'100%'}
-
+          <Box
+            style={{
+              backgroundImage: `url(${imageUrl})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              mixBlendMode: 'overlay',
+              width: '100%',
+              opacity: 0.2
+            }}
             className="rotating-image"
-          />
+          ><Image
+              src={imageUrl}
+              alt="House of Fire"
+              width={'100%'}
+              style={{ mixBlendMode: 'screen' }}
+            />
+            </Box>
+          
         )}
       </motion.div>
 
       <Stack gap='0' mih={short ? '200px' : '400px'} justify='center' style={{ zIndex: 10}}>
         <Title ta='center' c={titleColor} style={{ textTransform: 'uppercase', letterSpacing: '0.05em' }}>{name}</Title>
         <Text ta='center'>
-          {dosage}
+          {dosage ? parse(dosage.replace(/\n/g, '<br />')) : null}
         </Text>
         <Text ta='center' fz='lg'>
           {price}
