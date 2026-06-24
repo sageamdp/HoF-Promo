@@ -1,7 +1,6 @@
 import { Card, Stack, Title, Text, Image, Box } from "@mantine/core";
 import { motion } from "framer-motion";
 import type { SaleCardProps } from "types/types";
-import parse from 'html-react-parser';
 
 export default function SaleCard({ name, dosage, price, saleText, imageUrl, short = false, titleColor = 'brandPersimmon' }: SaleCardProps) {
 
@@ -49,7 +48,7 @@ export default function SaleCard({ name, dosage, price, saleText, imageUrl, shor
       <Stack gap='0' mih={short ? '200px' : '400px'} justify='center' style={{ zIndex: 10}}>
         <Title ta='center' c={titleColor} style={{ textTransform: 'uppercase', letterSpacing: '0.05em' }}>{name}</Title>
         <Text ta='center'>
-          {dosage ? parse(dosage.replace(/\n/g, '<br />')) : null}
+          {dosage ? <span dangerouslySetInnerHTML={{ __html: dosage.replace(/\n/g, '<br />') }} /> : null}
         </Text>
         <Text ta='center' fz='lg'>
           {price}
