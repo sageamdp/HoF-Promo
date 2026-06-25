@@ -28,7 +28,7 @@ export function Welcome() {
         Go to Screen Two
       </Button>
       <Text c="white">
-        <Text>Your display resolution is currently {resolution.width}x{resolution.height}</Text>
+        Your display resolution is currently {resolution.width}x{resolution.height}
       </Text>
       
     </Flex>

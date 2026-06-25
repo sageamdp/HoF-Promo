@@ -6,6 +6,6 @@ import { testRender } from "~/utils/test-render";
 describe('Welcome', () => {
   it('should render successfully', () => {
     testRender(<Welcome />);
-    expect(screen.getByText(/What's next?/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Welcome/i })).toBeInTheDocument();
   });
 });

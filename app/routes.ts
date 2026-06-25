@@ -6,6 +6,8 @@ export default [
   index("routes/home.tsx"),
   route("screen-one", "routes/screen-one.tsx"),
   route("screen-two", "routes/screen-two.tsx"),
+  route("admin/login", "routes/admin.login.tsx"),
+  route("admin/dashboard", "routes/admin.dashboard.tsx"),
 
 //   layout("./auth/layout.tsx", [
 //     route("login", "./auth/login.tsx"),
